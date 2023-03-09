@@ -173,12 +173,15 @@
 						android:textColor="@android:color/black"/>
 
 				<androidx.recyclerview.widget.RecyclerView
+						android:paddingRight="22dp"
+						android:paddingLeft="22dp"
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
 						app:layout_constraintTop_toBottomOf="@+id/textView6"
 						app:layout_constraintStart_toStartOf="parent"
 						app:layout_constraintEnd_toEndOf="parent"
-						android:id="@+id/recyclerView"/>
+						android:id="@+id/recyclerView"
+						android:clipToPadding="false"/>
 
 				<TextView
 						android:text="Trending Meals"
@@ -198,7 +201,8 @@
 						android:layout_height="match_parent"
 						app:layout_constraintTop_toBottomOf="@+id/textView12"
 						app:layout_constraintStart_toStartOf="parent"
-						app:layout_constraintEnd_toEndOf="parent"/>
+						app:layout_constraintEnd_toEndOf="parent"
+						android:id="@+id/recyclerView2"/>
 
 
 			</androidx.constraintlayout.widget.ConstraintLayout>
@@ -370,6 +374,7 @@
 		</com.google.android.material.bottomappbar.BottomAppBar>
 
 		<com.google.android.material.floatingactionbutton.FloatingActionButton
+				app:maxImageSize="30dp"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:backgroundTint="#ff5e00"
@@ -377,6 +382,7 @@
 				android:src="@drawable/shopping_cart"
 				app:backgroundTint="#ff5e00"
 				app:layout_anchor="@id/appBar"
+				app:tint="#ffffff"
 				>
 		</com.google.android.material.floatingactionbutton.FloatingActionButton>
 	</androidx.coordinatorlayout.widget.CoordinatorLayout>

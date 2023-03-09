@@ -4,9 +4,18 @@ import android.view.Window;
 import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.example.foodapp.Adaptor.CategoryAdaptor;
+import com.example.foodapp.Adaptor.TrendingAdaptor;
+import com.example.foodapp.Domain.CategoryDomain;
+import com.example.foodapp.Domain.TrendingDomain;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
+    private RecyclerView.Adapter adapter,adapter2;
+    private RecyclerView recyclerViewCategoryList,recyclerViewTrendingList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,5 +23,36 @@ public class MainActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
+
+        recyclerViewCategoryList();
+    }
+    private void recyclerViewCategoryList(){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        recyclerViewCategoryList = findViewById(R.id.recyclerView);
+        recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
+
+        ArrayList<CategoryDomain> category = new ArrayList<>();
+        category.add(new CategoryDomain("Pizza","cat_1"));
+        category.add(new CategoryDomain("Burger","cat_2"));
+        category.add(new CategoryDomain("Hot dog","cat_3"));
+        category.add(new CategoryDomain("Drink","cat_4"));
+        category.add(new CategoryDomain("Donut","cat_5"));
+
+        adapter = new CategoryAdaptor(category);
+        recyclerViewCategoryList.setAdapter(adapter);
+
+    }
+
+    private void recyclerViewTrending(){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        recyclerViewTrendingList=findViewById(R.id.recyclerView2);
+
+        ArrayList<TrendingDomain> foodList = new ArrayList<>();
+        foodList.add(new TrendingDomain("Pepperoni Pizza", "pizza1","slices pepperoni,mozzerella cheese, fresh oregano,ground black pepper,pizza sauce",10.5));
+        foodList.add(new TrendingDomain("Cheese Burger", "burger","beef,Gouda Cheese,Special Sauce,tomato",12.5));
+        foodList.add(new TrendingDomain("Vegetable Pizza", "pizza2","olive oil , vegetable oil,pitted kalamata,cherry tomatoes",14.5));
+
+        adapter2=new TrendingAdaptor(foodList);
+        recyclerViewTrendingList.setAdapter(adapter2);
     }
 }
