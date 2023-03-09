@@ -6,11 +6,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
-import com.example.foodapp.Domain.CategoryDomain;
 import com.example.foodapp.Domain.TrendingDomain;
 import com.example.foodapp.R;
 
@@ -18,69 +15,46 @@ import java.util.ArrayList;
 
 public class TrendingAdaptor extends RecyclerView.Adapter<TrendingAdaptor.ViewHolder> {
 
-    ArrayList<TrendingDomain>categoryTrending;
+    ArrayList<TrendingDomain> trendingFood;
 
-    public TrendingAdaptor(ArrayList<TrendingDomain> categoryDomains) {
-        this.categoryTrending = categoryDomains;
+    public TrendingAdaptor(ArrayList<TrendingDomain> trendingFood) {
+        
+        this.trendingFood = trendingFood;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
-        View inflate =  LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_category,parent,false);
+        View inflate =  LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_trending,parent,false);
         return new ViewHolder(inflate);
     }
 
     @Override
     public void onBindViewHolder(@NonNull  ViewHolder holder, int position) {
-        holder.categoryName.setText(categoryTrending.get(position).getTitle());
-        String picUrl = "";
-        switch (position){
-            case 0:{
-                picUrl="cat_1";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background1));
-                break;
-            }
-            case 1:{
-                picUrl="cat_2";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background2));
-                break;
-            }
-            case 2:{
-                picUrl="cat_3";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background3));
-                break;
-            }
-            case 3:{
-                picUrl="cat_4";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background4));
-                break;
-            }
-            case 4:{
-                picUrl="cat_5";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background5));
-                break;
-            }
-        }
-        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(picUrl,"drawable",holder.itemView.getContext().getPackageName());
+        holder.title.setText(trendingFood.get(position).getTitle());
+        holder.fee.setText(String.valueOf(trendingFood.get(position).getFee()));
+
+        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(trendingFood.get(position).getPic(),"drawable",holder.itemView.getContext().getPackageName());
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
-                .into(holder.categoryPic);
+                .into(holder.pic);
     }
 
     @Override
     public int getItemCount() {
-        return categoryDomains.size();
+
+        return trendingFood.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView categoryName;
-        ImageView categoryPic;
-        ConstraintLayout mainLayout;
+        TextView title,fee;
+        ImageView pic;
+        TextView addBtn;
         public ViewHolder(@NonNull  View itemView) {
             super(itemView);
-            categoryName = itemView.findViewById(R.id.categoryName);
-            categoryPic = itemView.findViewById(R.id.categoryPic);
-            mainLayout = itemView.findViewById(R.id.mainLayout);
+            title=itemView.findViewById(R.id.title);
+            fee=itemView.findViewById(R.id.fee);
+            pic=itemView.findViewById(R.id.pic);
+            addBtn=itemView.findViewById(R.id.addBtn);
         }
     }
 }

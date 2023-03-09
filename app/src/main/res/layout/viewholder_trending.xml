@@ -2,7 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    android:layout_width="wrap_content"
-                                                   android:layout_height="wrap_content">
+                                                   android:layout_height="wrap_content"
+                                                   android:background="@drawable/cart_background"
+                                                   android:elevation="4dp"
+                                                   android:layout_margin="12dp">
 
 	<TextView
 			android:text="title"
@@ -20,10 +23,10 @@
 			android:textSize="16sp"/>
 
 	<ImageView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
+			android:layout_width="100dp"
+			android:layout_height="100dp"
 			app:srcCompat="@drawable/pop_1"
-			android:id="@+id/imageView7"
+			android:id="@+id/pic"
 			app:layout_constraintTop_toBottomOf="@+id/title"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
@@ -35,9 +38,9 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/fee"
-			app:layout_constraintTop_toBottomOf="@+id/imageView7"
-			app:layout_constraintEnd_toEndOf="@+id/imageView7"
-			app:layout_constraintStart_toStartOf="@+id/imageView7"
+			app:layout_constraintTop_toBottomOf="@+id/pic"
+			app:layout_constraintEnd_toEndOf="@+id/pic"
+			app:layout_constraintStart_toStartOf="@+id/pic"
 			android:textSize="16sp"
 			android:textStyle="normal"
 			android:textColor="#373b54"/>
@@ -49,7 +52,7 @@
 			android:id="@+id/textView14"
 			app:layout_constraintEnd_toStartOf="@+id/fee"
 			app:layout_constraintBottom_toBottomOf="@+id/fee"
-			app:layout_constraintTop_toBottomOf="@+id/imageView7"
+			app:layout_constraintTop_toBottomOf="@+id/pic"
 			android:textSize="12sp"
 			android:textColor="#FF3D00"
 			android:layout_marginEnd="4dp"/>
@@ -61,8 +64,8 @@
 			android:id="@+id/addBtn"
 			app:layout_constraintTop_toBottomOf="@+id/fee"
 			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintEnd_toEndOf="@+id/imageView7"
-			app:layout_constraintStart_toStartOf="@+id/imageView7"
+			app:layout_constraintEnd_toEndOf="@+id/pic"
+			app:layout_constraintStart_toStartOf="@+id/pic"
 			android:background="@drawable/orange_button"
 			android:textColor="@color/white"
 			android:layout_margin="10dp"
