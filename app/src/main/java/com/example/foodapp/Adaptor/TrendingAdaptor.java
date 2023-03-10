@@ -1,5 +1,7 @@
 package com.example.foodapp.Adaptor;
 
+import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.foodapp.Domain.TrendingDomain;
 import com.example.foodapp.R;
+import com.example.foodapp.ShowDetailActivity;
 
 import java.util.ArrayList;
 
@@ -37,6 +40,14 @@ public class TrendingAdaptor extends RecyclerView.Adapter<TrendingAdaptor.ViewHo
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
                 .into(holder.pic);
+        holder.addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
+                intent.putExtra("object", trendingFood.get(position));
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

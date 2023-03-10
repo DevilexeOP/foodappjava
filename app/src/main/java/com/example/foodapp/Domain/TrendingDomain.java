@@ -1,6 +1,8 @@
 package com.example.foodapp.Domain;
 
-public class TrendingDomain {
+import java.io.Serializable;
+
+public class TrendingDomain implements Serializable {
     private String title;
     private String pic;
     private String description;

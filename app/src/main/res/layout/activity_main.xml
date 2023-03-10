@@ -107,7 +107,7 @@
 
 					<TextView
 							android:text="Free Delivery "
-							android:layout_width="wrap_content"
+							android:layout_width="@dimen/_150sdp"
 							android:layout_height="wrap_content"
 							android:id="@+id/textView8"
 							app:layout_constraintTop_toTopOf="@+id/imageView5"
@@ -120,7 +120,7 @@
 
 					<TextView
 							android:text="Till 10 March"
-							android:layout_width="wrap_content"
+							android:layout_width="@dimen/_150sdp"
 							android:layout_height="wrap_content"
 							android:id="@+id/textView9"
 							app:layout_constraintTop_toBottomOf="@+id/textView8"
@@ -234,147 +234,153 @@
 
 				>
 
-			<LinearLayout
-					android:layout_width="match_parent"
-					android:layout_height="match_parent">
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/linearLayout2"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
 
 				<LinearLayout
-						android:id="@+id/homeBtn"
-						android:layout_width="0dp"
-						android:layout_height="match_parent"
-						android:layout_weight="0.2"
-						android:orientation="vertical"
-						>
+					android:id="@+id/homeBtn"
+					android:layout_width="0dp"
+					android:layout_height="0dp"
+					android:layout_marginStart="16dp"
+					android:layout_marginLeft="16dp"
+					android:orientation="vertical"
+					app:layout_constraintBottom_toBottomOf="@+id/profileBtn"
+					app:layout_constraintEnd_toStartOf="@+id/profileBtn"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="@+id/profileBtn">
 
 					<ImageView
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							app:srcCompat="@drawable/ic_stat_home"
-							app:tint="@color/black"
-							android:layout_weight="1"
-							android:id="@+id/homeView"/>
+						android:id="@+id/homeView"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						app:srcCompat="@drawable/ic_stat_home"
+						app:tint="@color/black" />
 
 					<TextView
-							android:text="Home"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:id="@+id/homeText"
-							android:textAlignment="center"
-							android:textSize="14sp"
-							android:textColor="@color/black"
-							/>
+						android:id="@+id/homeText"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Home"
+						android:textAlignment="center"
+						android:textColor="@color/black"
+						android:textSize="14sp" />
 				</LinearLayout>
 
 				<LinearLayout
-						android:id="@+id/profileBtn"
-						android:layout_width="0dp"
-						android:layout_height="match_parent"
-						android:layout_weight="0.2"
-						android:orientation="vertical"
-						>
+					android:id="@+id/profileBtn"
+					android:layout_width="0dp"
+					android:layout_height="0dp"
+					android:orientation="vertical"
+					app:layout_constraintBottom_toBottomOf="@+id/hiddenBtn"
+					app:layout_constraintEnd_toStartOf="@+id/hiddenBtn"
+					app:layout_constraintStart_toEndOf="@+id/homeBtn"
+					app:layout_constraintTop_toTopOf="@+id/hiddenBtn">
 
 					<ImageView
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							app:srcCompat="@drawable/ic_stat_user"
-							android:layout_weight="1"
-							android:id="@+id/profileView"
-							app:tint="#000000"/>
+						android:id="@+id/profileView"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						app:srcCompat="@drawable/ic_stat_user"
+						app:tint="#000000" />
 
 					<TextView
-							android:text="Profile"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:id="@+id/profileText"
-							android:textAlignment="center"
-							android:textSize="14sp"
-							android:textColor="@color/black"
-							/>
+						android:id="@+id/profileText"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Profile"
+						android:textAlignment="center"
+						android:textColor="@color/black"
+						android:textSize="14sp" />
 				</LinearLayout>
 
 				<!--Hidden-->
 				<LinearLayout
-						android:id="@+id/hiddenBtn"
-						android:layout_width="0dp"
-						android:layout_height="match_parent"
-						android:layout_weight="0.2"
-						android:orientation="vertical"
-						android:visibility="invisible"
-						>
+					android:id="@+id/hiddenBtn"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:visibility="invisible"
+					app:layout_constraintEnd_toStartOf="@+id/supportBtn"
+					app:layout_constraintStart_toEndOf="@+id/profileBtn">
 
 					<ImageView
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							app:srcCompat="@drawable/btn2"
-							android:layout_weight="1"
-							android:id="@+id/imageView3"/>
+						android:id="@+id/imageView3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						app:srcCompat="@drawable/btn2" />
 
 					<TextView
-							android:text="Home"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:id="@+id/textView4"
-							android:textAlignment="center"
-							android:textSize="16sp"
-							android:textColor="@color/black"
-							/>
+						android:id="@+id/textView4"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Home"
+						android:textAlignment="center"
+						android:textColor="@color/black"
+						android:textSize="16sp" />
 				</LinearLayout>
 				<!--Hidden-->
 
 				<LinearLayout
-						android:id="@+id/supportBtn"
-						android:layout_width="0dp"
-						android:layout_height="match_parent"
-						android:layout_weight="0.2"
-						android:orientation="vertical"
-						>
+					android:id="@+id/supportBtn"
+					android:layout_width="0dp"
+					android:layout_height="0dp"
+					android:orientation="vertical"
+					app:layout_constraintBottom_toBottomOf="@+id/hiddenBtn"
+					app:layout_constraintEnd_toStartOf="@+id/settingBtn"
+					app:layout_constraintStart_toEndOf="@+id/hiddenBtn"
+					app:layout_constraintTop_toTopOf="@+id/hiddenBtn">
 
 					<ImageView
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							app:srcCompat="@drawable/ic_stat_conversation"
-							android:layout_weight="1"
-							android:id="@+id/supportView"
-							app:tint="#000000"/>
+						android:id="@+id/supportView"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						app:srcCompat="@drawable/ic_stat_conversation"
+						app:tint="#000000" />
 
 					<TextView
-							android:id="@+id/supportText"
-							android:text="Support"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:textAlignment="center"
-							android:textSize="14sp"
-							android:textColor="@color/black"
-							/>
+						android:id="@+id/supportText"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Support"
+						android:textAlignment="center"
+						android:textColor="@color/black"
+						android:textSize="14sp" />
 				</LinearLayout>
 
 				<LinearLayout
-						android:id="@+id/settingBtn"
-						android:layout_width="0dp"
-						android:layout_height="match_parent"
-						android:layout_weight="0.2"
-						android:orientation="vertical"
-						>
+					android:id="@+id/settingBtn"
+					android:layout_width="0dp"
+					android:layout_height="0dp"
+					android:orientation="vertical"
+					app:layout_constraintBottom_toBottomOf="@+id/supportBtn"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toEndOf="@+id/supportBtn"
+					app:layout_constraintTop_toTopOf="@+id/supportBtn">
 
 					<ImageView
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							app:srcCompat="@drawable/ic_stat_gear"
-							android:layout_weight="1"
-							android:id="@+id/settingView"
-							app:tint="#000000"/>
+						android:id="@+id/settingView"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						app:srcCompat="@drawable/ic_stat_gear"
+						app:tint="#000000" />
 
 					<TextView
-							android:text="Setting"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:id="@+id/settingText"
-							android:textAlignment="center"
-							android:textSize="14sp"
-							android:textColor="@color/black"
-							/>
+						android:id="@+id/settingText"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Setting"
+						android:textAlignment="center"
+						android:textColor="@color/black"
+						android:textSize="14sp" />
 				</LinearLayout>
-			</LinearLayout>
+			</androidx.constraintlayout.widget.ConstraintLayout>
 		</com.google.android.material.bottomappbar.BottomAppBar>
 
 		<com.google.android.material.floatingactionbutton.FloatingActionButton
