@@ -2,11 +2,119 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_14sdp"
+    android:layout_marginEnd="@dimen/_14sdp"
+    android:layout_marginTop="@dimen/_14sdp"
+    android:layout_marginBottom="@dimen/_14sdp"
+    android:elevation="@dimen/_4sdp"
+    >
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/picCartIV"
         android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_100sdp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pop_1" />
+
+    <TextView
+        android:id="@+id/titleCartTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="title"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        android:textColor="#373b54"
+        app:layout_constraintStart_toEndOf="@+id/picCartIV"
+        app:layout_constraintTop_toTopOf="@+id/picCartIV" />
+
+    <ImageView
+        android:id="@+id/minusCartBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/titleCartTV"
+        app:srcCompat="@drawable/minus" />
+
+    <TextView
+        android:id="@+id/numberItemTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="1"
+        android:textColor="#373b54"
+        android:textSize="@dimen/_18ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/minusCartBtn"
+        app:layout_constraintStart_toEndOf="@+id/minusCartBtn"
+        app:layout_constraintTop_toTopOf="@+id/minusCartBtn" />
+
+    <ImageView
+        android:id="@+id/plusCartBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/numberItemTV"
+        app:srcCompat="@drawable/plus" />
+
+    <TextView
+        android:id="@+id/feeEachTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="0"
+        android:textStyle="bold"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="#373b54"
+        app:layout_constraintBottom_toBottomOf="@+id/titleCartTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titleCartTV" />
+
+    <TextView
+        android:id="@+id/dollarTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:text="$"
+        android:textColor="#c45329"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/feeEachTV"
+        app:layout_constraintEnd_toStartOf="@+id/feeEachTV"
+        app:layout_constraintTop_toTopOf="@+id/feeEachTV" />
+
+    <TextView
+        android:id="@+id/totalEachTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#373b54"
+        android:textSize="@dimen/_18ssp"
+        android:textStyle="bold"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/plusCartBtn"
+        app:layout_constraintEnd_toEndOf="@+id/feeEachTV"
+        app:layout_constraintTop_toTopOf="@+id/plusCartBtn" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="$"
+        android:textColor="#c45329"
+        android:textSize="@dimen/_18ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/totalEachTV"
+        app:layout_constraintEnd_toStartOf="@+id/totalEachTV"
+        app:layout_constraintTop_toTopOf="@+id/totalEachTV" />
 </androidx.constraintlayout.widget.ConstraintLayout>

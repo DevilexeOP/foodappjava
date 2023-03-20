@@ -181,7 +181,7 @@
 						app:layout_constraintTop_toBottomOf="@+id/textView6"
 						app:layout_constraintStart_toStartOf="parent"
 						app:layout_constraintEnd_toEndOf="parent"
-						android:id="@+id/recyclerView"
+						android:id="@+id/recyclerView3"
 						android:clipToPadding="false"/>
 
 				<TextView
@@ -189,7 +189,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:id="@+id/textView12"
-						app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+						app:layout_constraintTop_toBottomOf="@+id/recyclerView3"
 						app:layout_constraintStart_toStartOf="parent"
 						android:layout_marginStart="32dp"
 						android:textStyle="bold|italic"
@@ -384,16 +384,15 @@
 		</com.google.android.material.bottomappbar.BottomAppBar>
 
 		<com.google.android.material.floatingactionbutton.FloatingActionButton
-				app:maxImageSize="30dp"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:backgroundTint="#ff5e00"
-				android:elevation="4dp"
-				android:src="@drawable/shopping_cart"
-				app:backgroundTint="#ff5e00"
-				app:layout_anchor="@id/appBar"
-				app:tint="#ffffff"
-				>
-		</com.google.android.material.floatingactionbutton.FloatingActionButton>
+			android:id="@+id/cartFloatBtn"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:backgroundTint="#ff5e00"
+			android:elevation="4dp"
+			android:src="@drawable/shopping_cart"
+			app:backgroundTint="#ff5e00"
+			app:layout_anchor="@id/appBar"
+			app:maxImageSize="30dp"
+			app:tint="#ffffff"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 	</androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

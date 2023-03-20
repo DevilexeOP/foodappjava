@@ -24,6 +24,10 @@ public class TrendingDomain implements Serializable {
         this.numberInCart = numberInCart;
     }
 
+    public static TrendingDomain get(int position) {
+        return null;
+    }
+
     public String getTitle() {
         return title;
     }

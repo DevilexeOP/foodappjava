@@ -32,7 +32,7 @@
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
+                android:id="@+id/recyclerView3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -172,8 +172,8 @@
         android:layout_height="wrap_content"
         android:text="Your Cart Is Empty"
         android:textSize="@dimen/_18ssp"
-        android:visibility="gone"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -349,9 +349,11 @@
         </com.google.android.material.bottomappbar.BottomAppBar>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/cartFloatBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#ff5e00"
+            android:contentDescription="@string/appbar_scrolling_view_behavior"
             android:elevation="4dp"
             android:src="@drawable/shopping_cart"
             app:backgroundTint="#ff5e00"

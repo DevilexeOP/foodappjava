@@ -1,15 +1,20 @@
 package com.example.foodapp;
 
+import android.content.Intent;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.LinearLayout;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.foodapp.Adaptor.CategoryAdaptor;
 import com.example.foodapp.Adaptor.TrendingAdaptor;
 import com.example.foodapp.Domain.CategoryDomain;
 import com.example.foodapp.Domain.TrendingDomain;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -26,10 +31,28 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerViewCategoryList();
         recyclerViewTrending();
+        bottomNavigation();
+    }
+
+    private void bottomNavigation(){
+        FloatingActionButton floatingActionButton = findViewById(R.id.cartFloatBtn);
+        LinearLayout homeBtn = findViewById(R.id.homeBtn);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,CartActivity.class));
+            }
+        });
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,MainActivity.class));
+            }
+        });
     }
     private void recyclerViewCategoryList(){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
-        recyclerViewCategoryList = findViewById(R.id.recyclerView);
+        recyclerViewCategoryList = findViewById(R.id.recyclerView3);
         recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
 
         ArrayList<CategoryDomain> category = new ArrayList<>();
